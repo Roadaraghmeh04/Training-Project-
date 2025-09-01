@@ -1,0 +1,101 @@
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #a8edea, #fed6e3); /* نفس الخلفية */
+  font-family: 'Poppins', sans-serif;
+}
+
+.register-container {
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7); /* خلفية شفافة */
+  backdrop-filter: blur(8px); /* تأثير الزجاج */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-container h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #2a2a2a;
+  text-align: center;
+}
+
+.register-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-container label {
+  margin-top: 12px;
+  font-weight: 500;
+  color: #333;
+}
+
+.register-container input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+  transition: all 0.3s;
+  background: #fafafa;
+}
+
+.register-container input:focus {
+  outline: none;
+  border-color: #7bbef5;
+  box-shadow: 0 0 6px rgba(123, 190, 245, 0.3);
+}
+
+.register-container .error {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.register-container button {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #7bbef5; /* أزرق موحد */
+  color: #fff;
+}
+
+.register-container button:hover {
+  background: #5aaee0;
+}
+
+.register-container p {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.register-container p a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-container p a:hover {
+  text-decoration: underline;
+}
+.register-container input {
+  margin-bottom: 8px; /* لتوفير مسافة تحت كل input */
+}

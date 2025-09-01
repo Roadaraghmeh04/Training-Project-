@@ -1,0 +1,52 @@
+<div class="categories-wrapper">
+  <!-- عنوان Categories -->
+  <div class="categories-header-title">
+    <h2>Categories</h2>
+  </div>
+
+  <!-- زر Add Category -->
+  <div class="categories-header">
+    <button class="fab" (click)="addCategory()">+ Add Category</button>
+  </div>
+
+  <!-- جدول Categories -->
+  <table class="categories-table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let category of categories">
+      <td>{{ category.id }}</td>
+      <td>{{ category.name }}</td>
+      <td>{{ category.description }}</td>
+      <td>
+        <button (click)="editCategory(category)">Edit</button>
+        <button (click)="deleteCategory(category)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- مودال Add / Edit Category -->
+  <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <h3>{{ isEditing ? 'Edit Category' : 'Add Category' }}</h3>
+
+      <label>Name</label>
+      <input [(ngModel)]="currentCategory.name" placeholder="Enter category name">
+
+      <label>Description</label>
+      <input [(ngModel)]="currentCategory.description" placeholder="Enter description">
+
+      <div class="modal-actions">
+        <button (click)="saveCategory()">{{ isEditing ? 'Save Changes' : 'Add Category' }}</button>
+        <button (click)="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

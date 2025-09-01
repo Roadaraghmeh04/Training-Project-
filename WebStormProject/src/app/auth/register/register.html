@@ -1,0 +1,39 @@
+<div class="register-wrapper">
+    <div class="register-container">
+        <h2>Create an Account</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+            <!-- Username -->
+            <label for="username">Username</label>
+            <input id="username" type="text" formControlName="username" placeholder="Enter your username">
+            <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched" class="error">
+                Username is required (min 3 characters).
+            </div>
+
+            <!-- Email -->
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email" placeholder="Enter your email">
+            <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error">
+                Enter a valid email.
+            </div>
+
+            <!-- Password -->
+            <label for="password">Password</label>
+            <input id="password" type="password" formControlName="password" placeholder="Enter your password">
+            <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error">
+                Password must be at least 6 characters.
+            </div>
+
+            <!-- Confirm Password -->
+            <label for="confirmPassword">Confirm Password</label>
+            <input id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Re-enter your password">
+            <div *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched" class="error">
+                Passwords do not match.
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" [disabled]="registerForm.invalid">Register</button>
+            <p>Already have an account? <a routerLink="/login">Login</a></p>
+        </form>
+    </div>
+</div>

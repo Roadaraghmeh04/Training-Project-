@@ -1,0 +1,102 @@
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #a8edea, #fed6e3); /* نفس التدرج للـ Login */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: rgba(255, 255, 255, 0.7); /* شبه شفاف */
+  backdrop-filter: blur(8px); /* تأثير زجاجي */
+  border-radius: 18px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+
+  .sidebar-header h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2a2a2a;
+    margin-bottom: 20px;
+  }
+
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+      color: #2a2a2a;
+      font-size: 15px;
+
+      i.icon {
+        font-size: 18px;
+      }
+
+      &:hover {
+        background: linear-gradient(135deg, #7bbef5, #4a90e2);
+        color: #fff;
+      }
+
+      &.logout {
+        margin-top: auto;
+        background: #fbb8d1;
+        color: #fff;
+
+        &:hover {
+          background: #e49dbd;
+        }
+      }
+    }
+  }
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  margin: 20px;
+  padding: 20px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+  .content-area {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: auto;
+    margin: 10px;
+    border-radius: 15px;
+  }
+
+  .main-content {
+    margin: 10px;
+    border-radius: 15px;
+  }
+}

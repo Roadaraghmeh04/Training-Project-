@@ -1,0 +1,66 @@
+<div class="login-wrapper">
+  <div class="login-container">
+
+    <!-- Left Side -->
+    <div class="login-left">
+      <div class="logo-section">
+        <img src="assets/loginlogo.png" alt="TaskFlow Logo">
+      </div>
+
+      <h1 class="welcome-text">Welcome to TaskFlow!</h1>
+      <p>Your smart way to organize, prioritize, and achieve more.</p>
+
+      <button class="view-more-btn" routerLink="/about">View more</button>
+    </div>
+
+    <!-- Right Side (Form) -->
+    <div class="login-right">
+      <h2 class="login-title">Login</h2>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <input id="email" type="email" formControlName="email" placeholder="Email address">
+          <small *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+            Email is required and must be valid
+          </small>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group password-wrapper">
+          <input [type]="hidePassword ? 'password' : 'text'"
+                 id="password"
+                 formControlName="password"
+                 placeholder="Password">
+
+          <!-- أيقونة العين -->
+          <span class="eye-icon" (click)="togglePasswordVisibility()">
+            <i class="fa" [ngClass]="hidePassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+          </span>
+
+          <small *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            Password must be at least 6 characters
+          </small>
+        </div>
+
+        <!-- رسالة الخطأ -->
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+
+        <div class="form-footer">
+          <label><input type="checkbox"> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <div class="buttons">
+          <button type="submit" [disabled]="loginForm.invalid">Login</button>
+          <button type="button" class="signup-btn" routerLink="/register">Sign Up</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+</div>

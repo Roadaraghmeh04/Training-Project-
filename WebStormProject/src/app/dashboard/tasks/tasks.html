@@ -1,0 +1,103 @@
+<div class="tasks-container">
+  <div class="tasks-header">
+    <h2>Tasks</h2>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+    <div class="filter-group">
+      <label>Status</label>
+      <select [(ngModel)]="filters.status">
+        <option value="">All</option>
+        <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Category</label>
+      <select [(ngModel)]="filters.category">
+        <option value="">All</option>
+        <option *ngFor="let c of userCategories" [value]="c.name">{{c.name}}</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Priority</label>
+      <select [(ngModel)]="filters.priority">
+        <option value="">All</option>
+        <option *ngFor="let p of priorities" [value]="p">{{p}}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Tasks Table -->
+  <table class="tasks-table">
+    <thead>
+    <tr>
+      <th>Task</th>
+      <th>Status</th>
+      <th>Priority</th>
+      <th>Category</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let task of filteredTasks">
+      <td>{{task.title}}</td>
+      <td [style.color]="getStatusColor(task.status)">{{task.status}}</td>
+      <td [style.color]="getPriorityColor(task.priority)">{{task.priority}}</td>
+      <td>{{task.category}}</td>
+      <td class="actions">
+        <button class="edit-btn" (click)="editTask(task)">✏️ Edit</button>
+        <button class="delete-btn" (click)="deleteTask(task)">🗑️ Delete</button>
+        <button class="complete-btn" (click)="markNextStatus(task)">
+          {{ task.status === 'InProgress' ? 'Mark Completed'
+          : task.status === 'Completed' ? 'Mark Canceled' : 'N/A' }}
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Add Task Button -->
+  <button class="fab" (click)="addTask()">+ Add Task</button>
+
+  <!-- Modal -->
+  <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <h3>{{ isEditing ? 'Edit Task' : 'Add Task' }}</h3>
+
+      <label>Title</label>
+      <input [(ngModel)]="currentTask.title" type="text">
+
+      <label>Description</label>
+      <input [(ngModel)]="currentTask.description" type="text">
+
+      <label>Due Date</label>
+      <input type="date" [(ngModel)]="currentTask.dueDate">
+
+      <label>Priority</label>
+      <select [(ngModel)]="currentTask.priority">
+        <option *ngFor="let p of priorities" [value]="p">{{p}}</option>
+      </select>
+
+      <label>Status</label>
+      <select [(ngModel)]="currentTask.status">
+        <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+      </select>
+
+      <label>Category</label>
+      <select [(ngModel)]="currentTask.categoryId">
+        <option *ngFor="let cat of userCategories" [value]="cat.id">{{cat.name}}</option>
+      </select>
+
+
+
+
+      <div class="modal-actions">
+        <button (click)="saveTask()">{{ isEditing ? 'Save Changes' : 'Add Task' }}</button>
+        <button (click)="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

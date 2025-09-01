@@ -1,0 +1,262 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #a8edea, #fed6e3); /* نفس التدرجات */
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #7bbef5;
+    margin: 8px auto 0;
+    border-radius: 2px;
+  }
+}
+
+.login-container {
+  display: flex;
+  width: 90%;
+  max-width: 800px;
+  min-height: 450px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+}
+
+.login-left {
+  flex: 1;
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  color: #333;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.logo-section img {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.logo-section .tagline {
+  font-size: 14px;
+  color: #444;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.login-left h1 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #2a2a2a;
+}
+
+.login-left h1 span {
+  color: #4a90e2;
+}
+
+.login-left p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #555;
+
+  .view-more-btn {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* بنفس التدرج اللي استعملناه */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .view-more-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+.login-right {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+  transition: all 0.3s;
+  background: #fafafa;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #7bbef5;
+  box-shadow: 0 0 6px rgba(123,190,245,0.3);
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.form-footer a {
+  color: #4a90e2;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* زر Sign In */
+.buttons button:first-child {
+  background: #7bbef5;  /* أزرق موحد */
+  color: #fff;
+}
+
+.buttons button:first-child:hover {
+  background: #5aaee0; /* أغمق شوي */
+}
+
+/* زر Sign Up */
+.signup-btn {
+  background: #fbb8d1; /* وردي */
+  color: #fff;
+}
+
+.signup-btn:hover {
+  background: #e49dbd; /* أغمق شوي */
+}
+.error-message {
+  color: #e74c3c; /* أحمر واضح */
+  font-size: 12px; /* أصغر خط */
+  margin: 8px 0;   /* مسافة فوق وتحت */
+  text-align: center; /* في الوسط */
+  font-weight: 500; /* خط متوسط السماكة */
+}
+
+input + small {
+  color: #e74c3c;  /* أحمر */
+  font-size: 12px; /* صغير */
+  margin-top: 4px; /* مسافة بسيطة فوق النص */
+  display: block;  /* حتى يظهر أسفل الحقل */
+}
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 40px; /* مساحة للأيقونة */
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  font-size: 18px; /* حجم أوضح */
+}
+
+.eye-icon:hover {
+  color: #4a90e2; /* يتغير لونها عند الهوفر */
+}
+/* نفس الحجم لكل الحقول */
+.login-container .form-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* عشان الأيقونة ما تصغر التكست */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%; /* نفس عرض تبع الإيميل */
+  padding-right: 40px; /* مساحة لعين */
+}
+
+.password-wrapper .eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+

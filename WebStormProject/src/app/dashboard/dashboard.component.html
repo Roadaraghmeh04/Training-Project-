@@ -1,0 +1,33 @@
+<div class="dashboard-wrapper">
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <h3>TaskFlow</h3>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="menu-item" (click)="navigateTo('tasks')">
+        <i class="icon">📋</i>
+        <span>Tasks</span>
+      </li>
+      <li class="menu-item" (click)="navigateTo('categories')">
+        <i class="icon">📁</i>
+        <span>Categories</span>
+      </li>
+      <li class="menu-item" (click)="navigateTo('profile')">
+        <i class="icon">👤</i>
+        <span>Profile</span>
+      </li>
+      <li class="menu-item logout" (click)="navigateTo('logout')">
+        <i class="icon">🚪</i>
+        <span>Logout</span>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
