@@ -1,7 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using TaskManage.Models;
+using Microsoft.EntityFrameworkCore;
 
+namespace TaskManage.Models;
+
+[Index("Username", Name = "UQ__Users__536C85E42D4869A6", IsUnique = true)]
+[Index("Email", Name = "UQ__Users__A9D1053465C546A0", IsUnique = true)]
 public partial class User
 {
     [Key]
@@ -21,7 +27,6 @@ public partial class User
     [InverseProperty("User")]
     public virtual ICollection<Category> Categories { get; set; } = new List<Category>();
 
-    // إضافة العلاقة مع TaskEntity
     [InverseProperty("User")]
     public virtual ICollection<TaskEntity> TaskEntities { get; set; } = new List<TaskEntity>();
 }

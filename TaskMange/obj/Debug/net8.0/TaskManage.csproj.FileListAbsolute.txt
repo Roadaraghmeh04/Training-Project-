@@ -1,0 +1,15 @@
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\bin\Debug\net8.0\TaskManage.deps.json
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\bin\Debug\net8.0\TaskManage.runtimeconfig.json
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\bin\Debug\net8.0\TaskManage.dll
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\bin\Debug\net8.0\TaskManage.pdb
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\obj\Debug\net8.0\TaskManage.csproj.AssemblyReference.cache
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\obj\Debug\net8.0\TaskManage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\obj\Debug\net8.0\TaskManage.AssemblyInfoInputs.cache
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\obj\Debug\net8.0\TaskManage.AssemblyInfo.cs
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\obj\Debug\net8.0\TaskManage.csproj.CoreCompileInputs.cache
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\obj\Debug\net8.0\TaskManage.sourcelink.json
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\obj\Debug\net8.0\TaskManage.dll
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\obj\Debug\net8.0\refint\TaskManage.dll
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\obj\Debug\net8.0\TaskManage.pdb
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\obj\Debug\net8.0\TaskManage.genruntimeconfig.cache
+C:\Users\VICTUS\Source\Repos\Training-Project\TaskMange\obj\Debug\net8.0\ref\TaskManage.dll

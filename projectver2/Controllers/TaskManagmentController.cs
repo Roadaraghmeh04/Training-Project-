@@ -16,12 +16,20 @@ namespace TaskManage.Controllers
         private readonly IUserRepository _userRepository;
         private readonly ITaskRepository _taskRepository;
         private readonly ICategoryRepository _categoryRepository;
-        private readonly AppDbContext _context = new AppDbContext();
+        private readonly AppDbContext _context;
 
-        public UserController(IUserRepository userRepository)
+        public UserController(
+            IUserRepository userRepository,
+            ITaskRepository taskRepository,
+            ICategoryRepository categoryRepository,
+            AppDbContext context)
         {
             _userRepository = userRepository;
+            _taskRepository = taskRepository;
+            _categoryRepository = categoryRepository;
+            _context = context;
         }
+
 
         // ✅ POST Register
         [HttpPost("register")]
@@ -115,46 +123,71 @@ namespace TaskManage.Controllers
             }));
         }
 
+
         // ✅ POST add task (uses CategoryName)
         [HttpPost("tasks")]
         [Authorize]
         public async Task<IActionResult> AddTask([FromBody] CreateTaskDto dto)
         {
-            int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value!);
-
-            var category = await _categoryRepository.GetCategoryByNameAsync(userId, dto.CategoryName);
-            if (category == null)
-                return BadRequest(new { message = "Category not found" });
-
-            var task = new TaskEntity
+            try
             {
-                Title = dto.Title,
-                Description = dto.Description,
-                DueDate = dto.DueDate,
-                Priority = dto.Priority,
-                Status = dto.Status,
-                CategoryId = category.Id
-            };
 
-            var createdTask = await _taskRepository.AddTaskAsync(userId, task);
+                int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value!);
 
-            return Ok(new TaskDto
-            {
-                Id = createdTask.Id,
-                Title = createdTask.Title,
-                Description = createdTask.Description,
-                DueDate = createdTask.DueDate,
-                Priority = createdTask.Priority,
-                Status = createdTask.Status,
-                CategoryName = createdTask.Category?.Name, // ← اضف هذا
-                Category = new CategoryDto
+
+                var category = await _categoryRepository.GetCategoryByNameAsync(userId, dto.CategoryName);
+                if (category == null)
+                    return BadRequest(new { message = $"Category '{dto.CategoryName}' not found" });
+
+
+                var task = new TaskEntity
                 {
-                    Id = createdTask.Category.Id,
-                    Name = createdTask.Category.Name,
-                    Description = createdTask.Category.Description
-                }
-            });
+                    Title = dto.Title,
+                    Description = dto.Description,
+                    DueDate = dto.DueDate,
+                    Priority = dto.Priority,
+                    Status = dto.Status,
+                    CategoryId = category.Id,
+                    UserId = userId
+                };
 
+
+                var createdTask = await _taskRepository.AddTaskAsync(userId, task);
+
+                if (createdTask == null)
+                    return StatusCode(500, new { message = "Failed to create task" });
+
+
+                var response = new TaskDto
+                {
+                    Id = createdTask.Id,
+                    Title = createdTask.Title,
+                    Description = createdTask.Description,
+                    DueDate = createdTask.DueDate,
+                    Priority = createdTask.Priority,
+                    Status = createdTask.Status,
+                    CategoryName = createdTask.Category?.Name ?? category.Name,
+                    Category = createdTask.Category != null ? new CategoryDto
+                    {
+                        Id = createdTask.Category.Id,
+                        Name = createdTask.Category.Name,
+                        Description = createdTask.Category.Description
+                    } : new CategoryDto
+                    {
+                        Id = category.Id,
+                        Name = category.Name,
+                        Description = category.Description
+                    }
+                };
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+
+
+                return StatusCode(500, new { message = "An error occurred while creating the task" });
+            }
         }
 
         // ✅ PUT update task (uses CategoryName)
@@ -162,38 +195,78 @@ namespace TaskManage.Controllers
         [Authorize]
         public async Task<IActionResult> UpdateTask(int id, [FromBody] CreateTaskDto dto)
         {
-            int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value!);
-            var task = await _taskRepository.GetTaskByIdAsync(userId, id);
-
-            if (task == null) return NotFound(new { message = "Task not found" });
-
-            var category = await _categoryRepository.GetCategoryByNameAsync(userId, dto.CategoryName);
-            if (category == null)
-                return BadRequest(new { message = "Category not found" });
-
-            task.Title = dto.Title;
-            task.Description = dto.Description;
-            task.DueDate = dto.DueDate;
-            task.Priority = dto.Priority;
-            task.Status = dto.Status;
-            task.CategoryId = category.Id;
-
-            await _taskRepository.UpdateTaskAsync(task);
-
-            return Ok(new TaskDto
+            try
             {
-                Id = task.Id,
-                Title = task.Title,
-                Description = task.Description,
-                DueDate = task.DueDate,
-                Priority = task.Priority,
-                Status = task.Status,
-                Category = new CategoryDto
+
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out int userId))
                 {
-                    Id = category.Id,
-                    Name = category.Name
+                    return Unauthorized(new { message = "Invalid user token" });
                 }
-            });
+
+
+                if (dto == null)
+                {
+                    return BadRequest(new { message = "Invalid task data" });
+                }
+
+
+                var task = await _taskRepository.GetTaskByIdAsync(userId, id);
+                if (task == null)
+                {
+                    return NotFound(new { message = "Task not found" });
+                }
+
+
+                var category = await _categoryRepository.GetCategoryByNameAsync(userId, dto.CategoryName);
+                if (category == null)
+                {
+                    return BadRequest(new { message = "Category not found" });
+                }
+
+
+                task.Title = dto.Title ?? task.Title;
+                task.Description = dto.Description ?? task.Description;
+                task.DueDate = dto.DueDate ?? task.DueDate;
+                task.Priority = dto.Priority ?? task.Priority;
+                task.Status = dto.Status ?? task.Status;
+                task.CategoryId = category.Id;
+
+
+                await _taskRepository.UpdateTaskAsync(task);
+
+
+                return Ok(new TaskDto
+                {
+                    Id = task.Id,
+                    Title = task.Title,
+                    Description = task.Description,
+                    DueDate = task.DueDate,
+                    Priority = task.Priority,
+                    Status = task.Status,
+                    Category = new CategoryDto
+                    {
+                        Id = category.Id,
+                        Name = category.Name
+                    }
+                });
+            }
+            catch (FormatException)
+            {
+                return Unauthorized(new { message = "Invalid user ID format in token" });
+            }
+            catch (ArgumentNullException ex)
+            {
+                return BadRequest(new { message = "Missing required data", details = ex.ParamName });
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine($"UpdateTask Error: {ex.Message}");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+
+                return StatusCode(500, new { message = "Internal server error" });
+            }
         }
 
         // ✅ DELETE task
@@ -219,17 +292,17 @@ namespace TaskManage.Controllers
             [FromQuery] int? categoryId,
             [FromQuery] DateTime? dueDate)
         {
-            // Get logged-in user ID from JWT
+
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (userIdClaim == null) return Unauthorized();
             int userId = int.Parse(userIdClaim);
 
-            // Start query for user's tasks
+
             var query = _context.TaskEntities
                 .Where(t => t.UserId == userId)
                 .AsQueryable();
 
-            // Apply filters if provided
+
             if (!string.IsNullOrEmpty(status))
                 query = query.Where(t => t.Status == status);
 
@@ -253,22 +326,81 @@ namespace TaskManage.Controllers
         [Authorize]
         public async Task<IActionResult> AddCategory([FromBody] CreateCategoryDto dto)
         {
-            int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value!);
-            var category = new Category
+            try
             {
-                Name = dto.Name,
-                Description = dto.Description
-            };
 
-            var createdCategory = await _categoryRepository.AddCategoryAsync(userId, category);
+                if (dto == null)
+                    return BadRequest(new { message = "Category data is required" });
+
+                if (string.IsNullOrWhiteSpace(dto.Name))
+                    return BadRequest(new { message = "Category name is required" });
+
+
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out int userId))
+                    return Unauthorized(new { message = "Invalid user authentication" });
+
+
+                var existingCategory = await _categoryRepository.GetCategoryByNameAsync(userId, dto.Name);
+                if (existingCategory != null)
+                    return Conflict(new { message = $"Category '{dto.Name}' already exists" });
+
+
+                var category = new Category
+                {
+                    Name = dto.Name.Trim(),
+                    Description = dto.Description?.Trim() ?? string.Empty
+                };
+
+
+                var createdCategory = await _categoryRepository.AddCategoryAsync(userId, category);
+
+                if (createdCategory == null)
+                    return StatusCode(500, new { message = "Failed to create category" });
+
+
+                var response = new CategoryDto
+                {
+                    Id = createdCategory.Id,
+                    Name = createdCategory.Name,
+                    Description = createdCategory.Description
+                };
+
+                return CreatedAtAction(
+                    nameof(GetCategoryById),
+                    new { id = createdCategory.Id },
+                    response
+                );
+            }
+            catch (Exception ex)
+            {
+
+
+                return StatusCode(500, new { message = "An error occurred while creating the category" });
+            }
+        }
+
+        // ✅ GET single category by id
+        [HttpGet("categories/{id}")]
+        [Authorize]
+        public async Task<IActionResult> GetCategoryById(int id)
+        {
+            int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value!);
+            var category = await _categoryRepository.GetCategoryByIdAsync(userId, id);
+
+            if (category == null)
+                return NotFound(new { message = "Category not found" });
 
             return Ok(new CategoryDto
             {
-                Id = createdCategory.Id,
-                Name = createdCategory.Name,
-                Description = createdCategory.Description
+                Id = category.Id,
+                Name = category.Name,
+                Description = category.Description
             });
         }
+
+
+
 
         // ✅ GET all categories
         [HttpGet("categories")]

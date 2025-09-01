@@ -2,12 +2,18 @@
 using TaskManage.Models;
 using TaskManage.Repositories.Interfaces;
 
-namespace TaskManage.Repositories {
+namespace TaskManage.Repositories
+{
     public class CategoryRepository : ICategoryRepository
     {
-
         private readonly AppDbContext _context;
-    
+
+
+        public CategoryRepository(AppDbContext context)
+        {
+            _context = context;
+        }
+
         public async Task<Category> AddCategoryAsync(int userId, Category category)
         {
             category.UserId = userId;
@@ -31,8 +37,12 @@ namespace TaskManage.Repositories {
 
         public async Task<Category?> GetCategoryByNameAsync(int userId, string categoryName)
         {
+            if (string.IsNullOrWhiteSpace(categoryName))
+                return null;
+
             return await _context.Categories
-                .FirstOrDefaultAsync(c => c.UserId == userId && c.Name.ToLower() == categoryName.ToLower());
+                .FirstOrDefaultAsync(c => c.UserId == userId &&
+                                          c.Name.ToLower() == categoryName.ToLower());
         }
 
         public async Task UpdateCategoryAsync(Category category)
@@ -47,6 +57,4 @@ namespace TaskManage.Repositories {
             await _context.SaveChangesAsync();
         }
     }
-
 }
-

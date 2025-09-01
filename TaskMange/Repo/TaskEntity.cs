@@ -6,8 +6,11 @@ using TaskManage.Repositories.Interfaces;
 public class TaskRepository : ITaskRepository
 {
     private readonly AppDbContext _context;
+    public TaskRepository(AppDbContext context)
+    {
+        _context = context;
+    }
 
-    
 
     public async Task<TaskEntity?> GetTaskByIdAsync(int userId, int taskId)
     {

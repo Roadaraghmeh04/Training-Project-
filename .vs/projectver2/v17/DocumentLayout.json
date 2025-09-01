@@ -1,10 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\DELL\\Desktop\\VC 2022\\projectver2\\",
+  "WorkspaceRootPath": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D4063D4D-90CC-410B-84F1-70FC4969F4AA}|projectver2\\projectver2.csproj|c:\\users\\dell\\desktop\\vc 2022\\projectver2\\projectver2\\controllers\\taskmanagmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D4063D4D-90CC-410B-84F1-70FC4969F4AA}|projectver2\\projectver2.csproj|c:\\users\\victus\\source\\repos\\training-project\\projectver2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4063D4D-90CC-410B-84F1-70FC4969F4AA}|projectver2\\projectver2.csproj|solutionrelative:projectver2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4063D4D-90CC-410B-84F1-70FC4969F4AA}|projectver2\\projectver2.csproj|c:\\users\\victus\\source\\repos\\training-project\\projectver2\\controllers\\taskmanagmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4063D4D-90CC-410B-84F1-70FC4969F4AA}|projectver2\\projectver2.csproj|solutionrelative:projectver2\\controllers\\taskmanagmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|c:\\users\\victus\\source\\repos\\training-project\\taskmange\\models\\taskentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|solutionrelative:taskmange\\models\\taskentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|c:\\users\\victus\\source\\repos\\training-project\\taskmange\\repo\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|solutionrelative:taskmange\\repo\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|c:\\users\\victus\\source\\repos\\training-project\\taskmange\\repo\\taskentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|solutionrelative:taskmange\\repo\\taskentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|c:\\users\\victus\\source\\repos\\training-project\\taskmange\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|solutionrelative:taskmange\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|c:\\users\\victus\\source\\repos\\training-project\\taskmange\\repo\\interfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|solutionrelative:taskmange\\repo\\interfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4063D4D-90CC-410B-84F1-70FC4969F4AA}|projectver2\\projectver2.csproj|c:\\users\\victus\\source\\repos\\training-project\\projectver2\\services.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4063D4D-90CC-410B-84F1-70FC4969F4AA}|projectver2\\projectver2.csproj|solutionrelative:projectver2\\services.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4063D4D-90CC-410B-84F1-70FC4969F4AA}|projectver2\\projectver2.csproj|c:\\users\\victus\\source\\repos\\training-project\\projectver2\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D4063D4D-90CC-410B-84F1-70FC4969F4AA}|projectver2\\projectver2.csproj|solutionrelative:projectver2\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|c:\\users\\victus\\source\\repos\\training-project\\taskmange\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|solutionrelative:taskmange\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|c:\\users\\victus\\source\\repos\\training-project\\taskmange\\repo\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|solutionrelative:taskmange\\repo\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|c:\\users\\victus\\source\\repos\\training-project\\taskmange\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A888588D-A55D-4283-B0A6-074F47D2E689}|TaskMange\\TaskManage.csproj|solutionrelative:taskmange\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4063D4D-90CC-410B-84F1-70FC4969F4AA}|projectver2\\projectver2.csproj|c:\\users\\victus\\source\\repos\\training-project\\projectver2\\projectver2.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{D4063D4D-90CC-410B-84F1-70FC4969F4AA}|projectver2\\projectver2.csproj|solutionrelative:projectver2\\projectver2.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,20 +62,169 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TaskManagmentController.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\VC 2022\\projectver2\\projectver2\\Controllers\\TaskManagmentController.cs",
-              "RelativeDocumentMoniker": "projectver2\\Controllers\\TaskManagmentController.cs",
-              "ToolTip": "C:\\Users\\DELL\\Desktop\\VC 2022\\projectver2\\projectver2\\Controllers\\TaskManagmentController.cs",
-              "RelativeToolTip": "projectver2\\Controllers\\TaskManagmentController.cs",
+              "DocumentIndex": 2,
+              "Title": "TaskEntity.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Models\\TaskEntity.cs",
+              "RelativeDocumentMoniker": "TaskMange\\Models\\TaskEntity.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Models\\TaskEntity.cs",
+              "RelativeToolTip": "TaskMange\\Models\\TaskEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T13:35:32.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Categories.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Repo\\Categories.cs",
+              "RelativeDocumentMoniker": "TaskMange\\Repo\\Categories.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Repo\\Categories.cs",
+              "RelativeToolTip": "TaskMange\\Repo\\Categories.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAwDsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T10:51:58.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TaskManagmentController.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\projectver2\\Controllers\\TaskManagmentController.cs",
+              "RelativeDocumentMoniker": "projectver2\\Controllers\\TaskManagmentController.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\projectver2\\Controllers\\TaskManagmentController.cs",
+              "RelativeToolTip": "projectver2\\Controllers\\TaskManagmentController.cs",
+              "ViewState": "AgIAAOYBAAAAAAAAAAAYwAECAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-27T16:35:25.395Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Interfaces.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Repo\\Interfaces.cs",
+              "RelativeDocumentMoniker": "TaskMange\\Repo\\Interfaces.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Repo\\Interfaces.cs",
+              "RelativeToolTip": "TaskMange\\Repo\\Interfaces.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAxwCQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T11:02:47.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\projectver2\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "projectver2\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\projectver2\\Properties\\launchSettings.json",
+              "RelativeToolTip": "projectver2\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAowBcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-28T21:26:27.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\projectver2\\Program.cs",
+              "RelativeDocumentMoniker": "projectver2\\Program.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\projectver2\\Program.cs",
+              "RelativeToolTip": "projectver2\\Program.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAgwHgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T21:27:55.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TaskEntity.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Repo\\TaskEntity.cs",
+              "RelativeDocumentMoniker": "TaskMange\\Repo\\TaskEntity.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Repo\\TaskEntity.cs",
+              "RelativeToolTip": "TaskMange\\Repo\\TaskEntity.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAYwFYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T10:43:35.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Services.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\projectver2\\Services.cs",
+              "RelativeDocumentMoniker": "projectver2\\Services.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\projectver2\\Services.cs",
+              "RelativeToolTip": "projectver2\\Services.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowBQAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T11:42:06.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "TaskMange\\Models\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Models\\AppDbContext.cs",
+              "RelativeToolTip": "TaskMange\\Models\\AppDbContext.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T17:14:46.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Repo\\Users.cs",
+              "RelativeDocumentMoniker": "TaskMange\\Repo\\Users.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Repo\\Users.cs",
+              "RelativeToolTip": "TaskMange\\Repo\\Users.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAswGkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T11:02:53.504Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "TaskMange\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Models\\Category.cs",
+              "RelativeToolTip": "TaskMange\\Models\\Category.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA6wB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T14:48:01.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "projectver2",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\Source\\Repos\\Training-Project\\projectver2\\projectver2.csproj",
+              "RelativeDocumentMoniker": "projectver2\\projectver2.csproj",
+              "ToolTip": "C:\\Users\\VICTUS\\Source\\Repos\\Training-Project\\projectver2\\projectver2.csproj",
+              "RelativeToolTip": "projectver2\\projectver2.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-28T21:26:20.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Models\\User.cs",
+              "RelativeDocumentMoniker": "TaskMange\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\VICTUS\\source\\repos\\Training-Project\\TaskMange\\Models\\User.cs",
+              "RelativeToolTip": "TaskMange\\Models\\User.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAUwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T22:39:39.777Z"
             }
           ]
         }

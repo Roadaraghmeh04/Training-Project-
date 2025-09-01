@@ -21,11 +21,10 @@ public partial class Category
 
     public DateTime? CreatedAt { get; set; }
 
+    [InverseProperty("Category")]
+    public virtual ICollection<TaskEntity> TaskEntities { get; set; } = new List<TaskEntity>();
+
     [ForeignKey("UserId")]
     [InverseProperty("Categories")]
     public virtual User User { get; set; } = null!;
-
-    // إضافة العلاقة مع TaskEntity
-    [InverseProperty("Category")]
-    public virtual ICollection<TaskEntity> TaskEntities { get; set; } = new List<TaskEntity>();
 }

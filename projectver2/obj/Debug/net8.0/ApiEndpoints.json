@@ -59,6 +59,22 @@
   },
   {
     "ContainingType": "TaskManage.Controllers.UserController",
+    "Method": "GetCategoryById",
+    "RelativePath": "api/User/categories/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TaskManage.Controllers.UserController",
     "Method": "UpdateCategory",
     "RelativePath": "api/User/categories/{id}",
     "HttpMethod": "PUT",
@@ -238,16 +254,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TaskManage.Controllers.UserController",
-    "Method": "TestAuth",
-    "RelativePath": "api/User/test-auth",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   }
 ]
